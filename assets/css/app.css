@@ -1,5 +1,18 @@
 /* This file is for your main application css. */
 #sidebar {
   background-color: #90a4ae;
-  height: 100vh;
+  position: fixed;
+  height: 100%;
+}
+
+.row .col.s9 {
+    margin-left: 25%;
+}
+
+.nav-keys h4 {
+  color: beige;
+}
+
+.waves-effect {
+  display: block;
 }

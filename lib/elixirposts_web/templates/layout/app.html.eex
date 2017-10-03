@@ -32,16 +32,26 @@
     </nav>
     <div class="row">
       <div id="sidebar" class="col s3">
-        <ul>
-          <li><img src="" alt=""></li>
-          <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-          <li><a href="#!">Second Link</a></li>
+        <ul class="center nav-keys">
+          <li><div><img src="" alt=""></div></li>
+          <li><a class="waves-effect" href="#"><h4>Postgres</h4></a></li>
+          <div>
+            <h4><a class="waves-effect btn" href="#">Elixir</a></h4>
+          </div>
+          <div>
+            <h4><a class="waves-effect btn" href="#">phoenix</a></h4>
+          </div>
+          <div>
+            <h4><a class="waves-effect btn" href="#">Postgres</a></h4>
+          </div>
+          <div>
+            <h4><a class="waves-effect btn dropdown-button" href="#"
+               data-activates='dropdown1'>Deployment</a></h4>
+          </div>
 
-          <li><a class="subheader">Subheader</a></li>
-          <li><a class="waves-effect" href="#!"><h5>Third Link With Waves</h5></a></li>
         </ul>
       </div>
-      <div class="col s9">
+      <div class="col s9 main-display">
         <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
         <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
@@ -50,6 +60,14 @@
           </main>
 
       </div>
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="#!">one</a></li>
+        <li><a href="#!">two</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">three</a></li>
+        <li><a href="#!">four</a></li>
+        <li><a href="#!">five</a></li>
+      </ul>
     </div>
 
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
