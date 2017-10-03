@@ -1,1 +1,5 @@
 /* This file is for your main application css. */
+#sidebar {
+  background-color: #90a4ae;
+  height: 100vh;
+}

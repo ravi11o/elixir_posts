@@ -1,4 +1,16 @@
-<div>
-  <h2><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h2>
-  <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
+<div class="row">
+  <div class="col s10 offset-s1">
+    <h2><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h2>
+    <h5>TAGS:</h5><span class="chip">Elixir</span><span class="chip">Phoenix</span>
+    <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
+  </div>
 </div>
+<div class="divider"></div>
+<div class="row">
+  <div class="col s10 offset-s1">
+    <h2><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h2>
+    <h5>TAGS:</h5><span class="chip">Elixir</span><span class="chip">Phoenix</span>
+    <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
+  </div>
+</div>
+<div class="divider"></div>

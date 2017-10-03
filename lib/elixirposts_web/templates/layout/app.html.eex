@@ -12,16 +12,46 @@
   </head>
 
   <body>
-    <div class="container">
+    <nav class="top-nav">
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo">Logo</a>
+          <ul class="right hide-on-med-and-down">
+            <li class="search">
+              <form>
+                  <input id="search" type="search" required placeholder="Search">
+              </form>
+            </li>
+            <li>
+              <div class="chip">
+                <img src="images/phoenix.png" alt="Contact Person">
+                Jane Doe
+              </div>
+            </li>
+          </ul>
+      </div>
+    </nav>
+    <div class="row">
+      <div id="sidebar" class="col s3">
+        <ul>
+          <li><img src="" alt=""></li>
+          <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+          <li><a href="#!">Second Link</a></li>
 
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+          <li><a class="subheader">Subheader</a></li>
+          <li><a class="waves-effect" href="#!"><h5>Third Link With Waves</h5></a></li>
+        </ul>
+      </div>
+      <div class="col s9">
+        <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+        <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
-      <main role="main">
-        <%= render @view_module, @view_template, assigns %>
-      </main>
+          <main role="main">
+            <%= render @view_module, @view_template, assigns %>
+          </main>
 
-    </div> <!-- /container -->
+      </div>
+    </div>
+
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
