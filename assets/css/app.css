@@ -1,4 +1,12 @@
 /* This file is for your main application css. */
+.navbar-fixed {
+  position: fixed;
+}
+
+.main-container {
+  padding-top: 64px;
+}
+
 #sidebar {
   background-color: #90a4ae;
   position: fixed;
@@ -9,10 +17,27 @@
     margin-left: 25%;
 }
 
-.nav-keys h4 {
-  color: beige;
-}
-
 .waves-effect {
   display: block;
+}
+
+.post-tags, .post-packages {
+  display: flex;
+  align-items: center;
+  color: grey;
+  font-size: 1.3rem;
+}
+
+.post-title {
+  font-size: 2rem;
+  color: grey;
+}
+.post-writer {
+  font-size: 1.3rem;
+  color: grey;
+}
+
+.post-description {
+  font-size: 17px;
+  color: grey;
 }

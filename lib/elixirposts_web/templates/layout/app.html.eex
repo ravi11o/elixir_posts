@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <nav class="top-nav">
+    <nav class="top-nav navbar-fixed">
         <div class="nav-wrapper">
           <a href="#!" class="brand-logo">Logo</a>
           <ul class="right hide-on-med-and-down">
@@ -30,11 +30,9 @@
           </ul>
       </div>
     </nav>
-    <div class="row">
-      <div id="sidebar" class="col s3">
-        <ul class="center nav-keys">
-          <li><div><img src="" alt=""></div></li>
-          <li><a class="waves-effect" href="#"><h4>Postgres</h4></a></li>
+    <div class="row main-container">
+      <div id="sidebar" class="col s3 center">
+
           <div>
             <h4><a class="waves-effect btn" href="#">Elixir</a></h4>
           </div>
@@ -49,7 +47,6 @@
                data-activates='dropdown1'>Deployment</a></h4>
           </div>
 
-        </ul>
       </div>
       <div class="col s9 main-display">
         <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>

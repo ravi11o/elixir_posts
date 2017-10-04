@@ -1,0 +1,7 @@
+<div class="container">
+  <h2>New Featured</h2>
+
+  <%= render "form.html", Map.put(assigns, :action, featured_path(@conn, :create)) %>
+
+  <span><%= link "Back", to: featured_path(@conn, :index), class: "right btn" %></span>
+</div>

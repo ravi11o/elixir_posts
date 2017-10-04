@@ -1,16 +1,30 @@
+<%= for single <- @featured do %>
 <div class="row">
   <div class="col s10 offset-s1">
-    <h2><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h2>
-    <h5>TAGS:</h5><span class="chip">Elixir</span><span class="chip">Phoenix</span>
-    <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
+    <h3 class="post-title"><%= single.title %></h3>
+    <h5 class="post-writer">Posted by: <%= single.writer %></h5>
+    <div class="post-tags">
+      <h5 class="post-tags">Tags:</h5>
+      <%= for tag <- single.tags do %>
+        <span class="chip"><%= tag %></span>
+      <% end %>
+    </div>
+    <p class="post-description"><%= single.description %></p>
+    <%= if single.packages do %>
+      <div class="post-packages">
+        <h5 class="post-packages">External Packages Used: </h5>
+        <%= for package <- single.packages do %>
+          <span class="chip"><%= package %></span>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="post-links">
+      <span><%= link "Read More..", to: single.url %></span>
+      <%= if single.official_url do %>
+        <span class="right"><%= link "Official Docs", to: single.official_url, class: "btn"%></span>
+      <% end %>
+    </div>
   </div>
 </div>
 <div class="divider"></div>
-<div class="row">
-  <div class="col s10 offset-s1">
-    <h2><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h2>
-    <h5>TAGS:</h5><span class="chip">Elixir</span><span class="chip">Phoenix</span>
-    <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
-  </div>
-</div>
-<div class="divider"></div>
+<% end %>

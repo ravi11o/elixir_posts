@@ -1,0 +1,47 @@
+
+  <%= form_for @changeset, @action, fn f -> %>
+    <%= if @changeset.action do %>
+      <div class="alert alert-danger">
+        <p>Oops, something went wrong! Please check the errors below.</p>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= text_input f, :title, class: "form-control", placeholder: "Title" %>
+      <%= error_tag f, :title %>
+    </div>
+
+    <div class="form-group">
+      <%= text_input f, :tag, class: "form-control", placeholder: "Tags" %>
+      <%= error_tag f, :tag %>
+    </div>
+
+    <div class="form-group">
+      <%= text_input f, :description, class: "form-control", placeholder: "Description" %>
+      <%= error_tag f, :description %>
+    </div>
+
+    <div class="form-group">
+      <%= text_input f, :writer, class: "form-control", placeholder: "Writer" %>
+      <%= error_tag f, :writer %>
+    </div>
+
+    <div class="form-group">
+      <%= text_input f, :package, class: "form-control", placeholder: "Packages Used" %>
+      <%= error_tag f, :package %>
+    </div>
+
+    <div class="form-group">
+      <%= text_input f, :url, class: "form-control", placeholder: "Url" %>
+      <%= error_tag f, :url %>
+    </div>
+
+    <div class="form-group">
+      <%= text_input f, :official_url, class: "form-control", placeholder: "Official-Url" %>
+      <%= error_tag f, :official_url %>
+    </div>
+
+    <div class="form-group">
+      <%= submit "Submit", class: "btn btn-primary" %>
+    </div>
+  <% end %>

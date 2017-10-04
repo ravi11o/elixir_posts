@@ -17,6 +17,7 @@ defmodule ElixirpostsWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    resources "/featured", FeaturedController
   end
 
   # Other scopes may use custom stacks.
