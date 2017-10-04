@@ -21,6 +21,13 @@ defmodule Elixirposts.Index do
     Repo.all(Featured)
   end
 
+  def list_featured_with_page(params) do
+    Featured
+    |> order_by([p], desc: p.inserted_at)
+    |> Repo.paginate(params)
+
+  end
+
   @doc """
   Gets a single featured.
 

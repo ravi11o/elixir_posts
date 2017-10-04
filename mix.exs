@@ -20,7 +20,7 @@ defmodule Elixirposts.Mixfile do
   def application do
     [
       mod: {Elixirposts.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :scrivener_ecto, :scrivener_html]
     ]
   end
 
@@ -41,7 +41,9 @@ defmodule Elixirposts.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
-      {:materialize, "~> 0.1.1"}
+      {:materialize, "~> 0.1.1"},
+      {:scrivener_ecto, "~> 1.2"},
+      {:scrivener_html, "~> 1.7"}
     ]
   end
 
