@@ -9,4 +9,10 @@ defmodule ElixirpostsWeb.PageController do
     conn
     |> render("index.html", featured: page.entries, page: page)
   end
+
+  def list_subtopics(conn, params) do
+    page = Index.get_subtopic_list(params)
+     conn
+     |> render("index.html", featured: page.entries, page: page)
+  end
 end

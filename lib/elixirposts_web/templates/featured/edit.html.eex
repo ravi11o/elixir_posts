@@ -1,5 +1,0 @@
-<h2>Edit Featured</h2>
-
-<%= render "form.html", Map.put(assigns, :action, featured_path(@conn, :update, @featured)) %>
-
-<span><%= link "Back", to: featured_path(@conn, :index) %></span>

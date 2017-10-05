@@ -12,6 +12,16 @@
     </div>
 
     <div class="form-group">
+      <%= text_input f, :topic, class: "form-control", placeholder: "Topic" %>
+      <%= error_tag f, :topic %>
+    </div>
+
+    <div class="form-group">
+      <%= text_input f, :subtopic, class: "form-control", placeholder: "subtopic" %>
+      <%= error_tag f, :subtopic %>
+    </div>
+
+    <div class="form-group">
       <%= text_input f, :tag, class: "form-control", placeholder: "Tags" %>
       <%= error_tag f, :tag %>
     </div>
@@ -39,6 +49,11 @@
     <div class="form-group">
       <%= text_input f, :official_url, class: "form-control", placeholder: "Official-Url" %>
       <%= error_tag f, :official_url %>
+    </div>
+
+    <div class="form-group">
+      <%= text_input f, :featured, class: "form-control", placeholder: "Featured: True or false" %>
+      <%= error_tag f, :featured %>
     </div>
 
     <div class="form-group">

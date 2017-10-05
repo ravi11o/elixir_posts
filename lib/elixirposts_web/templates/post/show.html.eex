@@ -1,0 +1,58 @@
+<h2>Show Post</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @post.title %>
+  </li>
+
+  <li>
+    <strong>Topic:</strong>
+    <%= @post.topic %>
+  </li>
+
+  <li>
+    <strong>Subtopic:</strong>
+    <%= @post.subtopic %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @post.description %>
+  </li>
+
+  <li>
+    <strong>Writer:</strong>
+    <%= @post.writer %>
+  </li>
+
+  <li>
+    <strong>Tags:</strong>
+    <%= @post.tags %>
+  </li>
+
+  <li>
+    <strong>Packages:</strong>
+    <%= @post.packages %>
+  </li>
+
+  <li>
+    <strong>Url:</strong>
+    <%= @post.url %>
+  </li>
+
+  <li>
+    <strong>Official url:</strong>
+    <%= @post.official_url %>
+  </li>
+
+  <li>
+    <strong>Featured:</strong>
+    <%= @post.featured %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: post_path(@conn, :edit, @post) %></span>
+<span><%= link "Back", to: post_path(@conn, :index) %></span>

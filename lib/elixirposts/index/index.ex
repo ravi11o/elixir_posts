@@ -6,106 +6,114 @@ defmodule Elixirposts.Index do
   import Ecto.Query, warn: false
   alias Elixirposts.Repo
 
-  alias Elixirposts.Index.Featured
+  alias Elixirposts.Index.Post
 
   @doc """
-  Returns the list of featured.
+  Returns the list of Post.
 
   ## Examples
 
-      iex> list_featured()
-      [%Featured{}, ...]
+      iex> list_Post()
+      [%Post{}, ...]
 
   """
-  def list_featured do
-    Repo.all(Featured)
+  def list_post do
+    Repo.all(Post)
   end
 
   def list_featured_with_page(params) do
-    Featured
+    Post
     |> order_by([p], desc: p.inserted_at)
+    |> where([p], p.featured == true)
     |> Repo.paginate(params)
 
   end
 
-  @doc """
-  Gets a single featured.
+  def get_subtopic_list(%{"subtopic" => subtopic} = params) do
+    Post
+    |> order_by([p], desc: p.inserted_at)
+    |> where([p], p.subtopic == ^subtopic)
+    |> Repo.paginate(params)
+  end
 
-  Raises `Ecto.NoResultsError` if the Featured does not exist.
+  @doc """
+  Gets a single Post.
+
+  Raises `Ecto.NoResultsError` if the Post does not exist.
 
   ## Examples
 
-      iex> get_featured!(123)
-      %Featured{}
+      iex> get_Post!(123)
+      %Post{}
 
-      iex> get_featured!(456)
+      iex> get_Post!(456)
       ** (Ecto.NoResultsError)
 
   """
-  def get_featured!(id), do: Repo.get!(Featured, id)
+  def get_post!(id), do: Repo.get!(Post, id)
 
   @doc """
-  Creates a featured.
+  Creates a Post.
 
   ## Examples
 
-      iex> create_featured(%{field: value})
-      {:ok, %Featured{}}
+      iex> create_Post(%{field: value})
+      {:ok, %Post{}}
 
-      iex> create_featured(%{field: bad_value})
+      iex> create_Post(%{field: bad_value})
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_featured(attrs \\ %{}) do
-    %Featured{}
-    |> Featured.changeset(attrs)
+  def create_post(attrs \\ %{}) do
+    %Post{}
+    |> Post.changeset(attrs)
     |> Repo.insert()
   end
 
   @doc """
-  Updates a featured.
+  Updates a Post.
 
   ## Examples
 
-      iex> update_featured(featured, %{field: new_value})
-      {:ok, %Featured{}}
+      iex> update_Post(Post, %{field: new_value})
+      {:ok, %Post{}}
 
-      iex> update_featured(featured, %{field: bad_value})
+      iex> update_Post(Post, %{field: bad_value})
       {:error, %Ecto.Changeset{}}
 
   """
-  def update_featured(%Featured{} = featured, attrs) do
-    featured
-    |> Featured.changeset(attrs)
+  def update_post(%Post{} = post, attrs) do
+    post
+    |> Post.changeset(attrs)
     |> Repo.update()
   end
 
   @doc """
-  Deletes a Featured.
+  Deletes a Post.
 
   ## Examples
 
-      iex> delete_featured(featured)
-      {:ok, %Featured{}}
+      iex> delete_Post(Post)
+      {:ok, %Post{}}
 
-      iex> delete_featured(featured)
+      iex> delete_Post(Post)
       {:error, %Ecto.Changeset{}}
 
   """
-  def delete_featured(%Featured{} = featured) do
-    Repo.delete(featured)
+  def delete_post(%Post{} = post) do
+    Repo.delete(post)
   end
 
   @doc """
-  Returns an `%Ecto.Changeset{}` for tracking featured changes.
+  Returns an `%Ecto.Changeset{}` for tracking Post changes.
 
   ## Examples
 
-      iex> change_featured(featured)
-      %Ecto.Changeset{source: %Featured{}}
+      iex> change_Post(Post)
+      %Ecto.Changeset{source: %Post{}}
 
   """
-  def change_featured(%Featured{} = featured) do
-    Featured.changeset(featured, %{})
+  def change_post(%Post{} = post) do
+    Post.changeset(post, %{})
   end
 end

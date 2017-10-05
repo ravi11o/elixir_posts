@@ -1,10 +1,10 @@
-defmodule Elixirposts.Index.Featured do
+defmodule Elixirposts.Index.Post do
   use Ecto.Schema
   import Ecto.Changeset
-  alias Elixirposts.Index.Featured
+  alias Elixirposts.Index.Post
 
 
-  schema "featured" do
+  schema "posts" do
     field :description, :string
     field :official_url, :string
     field :package, :string, virtual: true
@@ -14,15 +14,18 @@ defmodule Elixirposts.Index.Featured do
     field :title, :string
     field :url, :string
     field :writer, :string
+    field :featured, :boolean
+    field :topic, :string
+    field :subtopic, :string
 
     timestamps()
   end
 
   @doc false
-  def changeset(%Featured{} = featured, attrs) do
-    featured
-    |> cast(attrs, [:title, :description, :writer, :tag, :package, :url, :official_url])
-    |> validate_required([:title, :description, :writer, :url])
+  def changeset(%Post{} = post, attrs) do
+    post
+    |> cast(attrs, [:title, :description, :writer, :tag, :package, :featured, :topic, :subtopic, :url, :official_url])
+    |> validate_required([:title, :description, :writer, :url, :topic, :featured, :subtopic])
     |> unique_constraint(:title)
     |> add_tags
     |> add_features
@@ -51,5 +54,5 @@ defmodule Elixirposts.Index.Featured do
       _ -> changeset
     end
   end
-
+  
 end
