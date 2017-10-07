@@ -19,9 +19,9 @@
         </div>
       <% end %>
       <div class="post-links">
-        <span><%= link "Read More..", to: single.url %></span>
+        <span><%= link "Read More..", to: single.url, target: "_blank" %></span>
         <%= if single.official_url do %>
-          <span class="right"><%= link "Official Docs", to: single.official_url, class: "btn"%></span>
+          <span class="right"><%= link "Official Docs", to: single.official_url, target: "_blank", class: "btn"%></span>
         <% end %>
       </div>
     </div>

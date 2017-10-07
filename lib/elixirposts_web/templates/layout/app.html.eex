@@ -14,12 +14,12 @@
   <body>
     <nav class="top-nav navbar-fixed">
         <div class="nav-wrapper">
-          <a href="#!" class="brand-logo">Logo</a>
+          <%= link "Elixir-posts", to: page_path(@conn, :index), class: "brand-logo" %>
           <ul class="right hide-on-med-and-down">
             <li class="search">
               <%= form_for @conn, page_path(@conn, :search), [as: :search, class: "search-form"], fn f -> %>
                   <%= text_input f, :search_input, required: true, class: "search-input", placeholder: "Search" %>
-                  <img src="/images/search.png" alt="Image" class="search-image">
+                  <input type="image" src="/images/search.png" class="search-image" border="0" alt="Submit" />
 
               <% end %>
             </li>
@@ -35,23 +35,26 @@
       </div>
     </nav>
     <div class="row main-container">
+
       <div id="sidebar" class="col s3 center">
-
-          <div>
-            <h4><a class="waves-effect btn" href="#">Elixir</a></h4>
-          </div>
-          <div>
-            <h4><a class="waves-effect btn" href="#">phoenix</a></h4>
-          </div>
-          <div>
-            <h4><a class="waves-effect btn" href="#">Postgres</a></h4>
-          </div>
-          <div>
-            <h4><a class="waves-effect btn dropdown-button" href="#"
-               data-activates='dropdown1'>Deployment</a></h4>
-          </div>
-
+        <div class="logo">
+          <img src="images/logo.png" class="logo-image" alt="Logo">
+        </div>
+        <div>
+          <h4><a class="waves-effect btn" href="#">Elixir</a></h4>
+        </div>
+        <div>
+          <h4><a class="waves-effect btn" href="#">phoenix</a></h4>
+        </div>
+        <div>
+          <h4><a class="waves-effect btn" href="#">Postgres</a></h4>
+        </div>
+        <div>
+          <h4><a class="waves-effect btn dropdown-button" href="#"
+             data-activates='dropdown1'>Deployment</a></h4>
+        </div>
       </div>
+
       <div class="col s9 main-display">
         <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
         <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
