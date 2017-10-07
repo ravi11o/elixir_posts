@@ -1,7 +1,7 @@
 defmodule Elixirposts.Index.Post do
   use Ecto.Schema
   import Ecto.Changeset
-  alias Elixirposts.Index.Post
+  alias Elixirposts.{Index.Post, Repo}
 
 
   schema "posts" do
@@ -54,5 +54,12 @@ defmodule Elixirposts.Index.Post do
       _ -> changeset
     end
   end
-  
+
+  def search(term) do
+    formatted = term |> String.replace(" ", "|")
+    Repo.execute_and_load("select * from posts where id in (select searchable_id from searches
+      where to_tsvector('english', term) 
+      @@ to_tsquery($1));", [ formatted ], Post)
+  end
+
 end

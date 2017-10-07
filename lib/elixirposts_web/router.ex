@@ -18,6 +18,7 @@ defmodule ElixirpostsWeb.Router do
 
     get "/", PageController, :index
     resources "/posts", PostController
+    post "/search", PageController, :search
     get "/:subtopic", PageController, :list_subtopics
   end
 

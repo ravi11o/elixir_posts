@@ -17,16 +17,20 @@
           <a href="#!" class="brand-logo">Logo</a>
           <ul class="right hide-on-med-and-down">
             <li class="search">
-              <form>
-                  <input id="search" type="search" required placeholder="Search">
-              </form>
+              <%= form_for @conn, page_path(@conn, :search), [as: :search, class: "search-form"], fn f -> %>
+                  <%= text_input f, :search_input, required: true, class: "search-input", placeholder: "Search" %>
+                  <img src="/images/search.png" alt="Image" class="search-image">
+
+              <% end %>
             </li>
-            <li>
-              <div class="chip">
-                <img src="images/phoenix.png" alt="Contact Person">
-                Jane Doe
-              </div>
-            </li>
+            <%= if Map.has_key?(@conn.assigns, :user) do %>
+              <li>
+                <div class="chip">
+                  <img src="images/phoenix.png" alt="Contact Person">
+                  Jane Doe
+                </div>
+              </li>
+            <% end %>
           </ul>
       </div>
     </nav>

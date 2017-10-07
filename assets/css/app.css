@@ -1,6 +1,7 @@
 /* This file is for your main application css. */
 .navbar-fixed {
   position: fixed;
+  padding: 0 50px;
 }
 
 .main-container {
@@ -44,4 +45,18 @@
 
 .post-links {
   margin-top: 20px;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+.search-image {
+  height: 25px;
+  width: 25px;
+}
+
+.search-input {
+  font-size: 25px;
 }

@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col s10 offset-s1">
       <h3 class="post-title"><%= single.title %></h3>
-      <h5 class="post-writer">Posted by: <%= single.writer %></h5>
+      <h5 class="post-writer">Posted by: <%= String.capitalize single.writer %></h5>
       <div class="post-tags">
         <h5 class="post-tags">Tags:</h5>
         <%= for tag <- single.tags do %>
@@ -28,5 +28,6 @@
   </div>
   <div class="divider"></div>
 <% end %>
-
-<%= pagination_links @page %>
+<%= if @page && @page.total_pages > 1 do %>
+  <%= pagination_links @page %>
+<% end %>
