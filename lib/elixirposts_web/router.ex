@@ -7,10 +7,12 @@ defmodule ElixirpostsWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug ElixirpostsWeb.Plugs.CurrentAdmin
   end
 
   pipeline :admin do
     plug :put_layout, {ElixirpostsWeb.LayoutView, "basic.html"}
+    plug ElixirpostsWeb.Plugs.AuthenticateAdmin
   end
 
   pipeline :api do
@@ -34,6 +36,7 @@ defmodule ElixirpostsWeb.Router do
 
     scope "/" do
       pipe_through :admin
+
       resources "/posts", PostController
     end
 

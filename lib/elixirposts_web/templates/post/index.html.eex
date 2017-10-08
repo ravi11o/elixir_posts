@@ -9,8 +9,6 @@
       <th>Writer</th>
       <th>Tags</th>
       <th>Packages</th>
-      <th>Url</th>
-      <th>Official url</th>
       <th>Featured</th>
 
       <th></th>
@@ -25,8 +23,6 @@
       <td><%= post.writer %></td>
       <td><%= post.tags %></td>
       <td><%= post.packages %></td>
-      <td><%= post.url %></td>
-      <td><%= post.official_url %></td>
       <td><%= post.featured %></td>
 
       <td class="text-right">
