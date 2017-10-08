@@ -43,7 +43,9 @@ defmodule Elixirposts.Mixfile do
       {:cowboy, "~> 1.0"},
       {:materialize, "~> 0.1.1"},
       {:scrivener_ecto, "~> 1.2"},
-      {:scrivener_html, "~> 1.7"}
+      {:scrivener_html, "~> 1.7"},
+      {:comeonin, "~> 4.0"},
+      {:bcrypt_elixir, "~> 1.0"}
     ]
   end
 

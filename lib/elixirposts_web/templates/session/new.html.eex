@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row admin-form">
+      <%= form_for @conn, session_path(@conn, :new), [as: :session, class: "col s6 offset-s3"], fn f ->  %>
+        <div class="row">
+          <div class="col s12">
+            <%= email_input f, :email, required: true, class: "validate", placeholder: "Email" %>
+          </div>
+          <div class="col s12">
+            <%= password_input f, :password, required: true, class: "validate", placeholder: "Password" %>
+          </div>
+          <div class="col s6 offset-s4">
+            <%= submit "Login", class: "btn-large" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+</div>

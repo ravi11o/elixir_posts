@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Hello Elixirposts!</title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+  </head>
+
+  <body>
+    <nav class="top-nav navbar-fixed">
+        <div class="nav-wrapper">
+          <%= link "Elixir-posts", to: page_path(@conn, :index), class: "brand-logo" %>
+          <ul class="right hide-on-med-and-down">
+            <li class="search">
+              <%= form_for @conn, page_path(@conn, :search), [as: :search, class: "search-form"], fn f -> %>
+                  <%= text_input f, :search_input, required: true, class: "search-input", placeholder: "Search" %>
+                  <input type="image" src="/images/search.png" class="search-image" border="0" alt="Submit" />
+
+              <% end %>
+            </li>
+            <%= if Map.has_key?(@conn.assigns, :user) do %>
+              <li>
+                <div class="chip">
+                  <img src="images/phoenix.png" alt="Contact Person">
+                  Jane Doe
+                </div>
+              </li>
+            <% end %>
+          </ul>
+      </div>
+    </nav>
+    <div class="alert-indicator center">
+      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+    </div>
+
+    <main role="main">
+      <%= render @view_module, @view_template, assigns %>
+    </main>
+
+
+
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>

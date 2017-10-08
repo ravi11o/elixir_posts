@@ -79,3 +79,15 @@
 .search-input {
   font-size: 1.5rem;
 }
+.alert {
+  font-size: 30px;
+}
+.alert-danger {
+  color: red;
+}
+.alert-info {
+  color: green;
+}
+.alert-indicator {
+  padding-top: 64px;
+}

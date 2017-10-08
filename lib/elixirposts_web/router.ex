@@ -9,6 +9,10 @@ defmodule ElixirpostsWeb.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :admin do
+    plug :put_layout, {ElixirpostsWeb.LayoutView, "basic.html"}
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
@@ -17,9 +21,22 @@ defmodule ElixirpostsWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    resources "/posts", PostController
+
     post "/search", PageController, :search
     get "/:subtopic", PageController, :list_subtopics
+  end
+
+  scope "/admin", ElixirpostsWeb do
+    pipe_through :browser
+
+    get "/new", SessionController, :new
+    post "/new", SessionController, :create
+
+    scope "/" do
+      pipe_through :admin
+      resources "/posts", PostController
+    end
+
   end
 
   # Other scopes may use custom stacks.
