@@ -15,6 +15,18 @@ defmodule ElixirpostsWeb.PageController do
      |> render("index.html", featured: page.entries, page: page)
   end
 
+  def conference(conn, _params) do
+    conn
+  end
+
+  def conference_list(conn, _params) do
+    conn
+  end
+
+  def talks(conn, _params) do
+    conn
+  end
+
   def search(conn, %{"search" => %{"search_input" => input}}) do
     posts = Post.search(input)
     conn

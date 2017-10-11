@@ -41,17 +41,20 @@
           <img src="images/logo.png" class="logo-image" alt="Logo">
         </div>
         <div>
-          <h4><a class="waves-effect btn" href="#">Elixir</a></h4>
+          <a class="waves-effect btn" href="#">Elixir</a>
         </div>
         <div>
-          <h4><a class="waves-effect btn" href="#">phoenix</a></h4>
+          <a class="waves-effect btn" href="#">phoenix</a>
         </div>
         <div>
-          <h4><a class="waves-effect btn" href="#">Postgres</a></h4>
+          <a class="waves-effect btn" href="#">Postgres</a>
         </div>
         <div>
-          <h4><a class="waves-effect btn dropdown-button" href="#"
-             data-activates='dropdown1'>Deployment</a></h4>
+          <a class="waves-effect btn dropdown-button" href="#"
+             data-activates='dropdown1'>Deployment</a>
+        </div>
+        <div>
+          <a class="waves-effect btn" href="#">Conferences</a>
         </div>
       </div>
 

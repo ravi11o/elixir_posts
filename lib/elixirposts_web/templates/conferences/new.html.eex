@@ -1,0 +1,8 @@
+<div class="container">
+  <h2>New Conferences</h2>
+
+  <%= render "form.html", Map.put(assigns, :action, conferences_path(@conn, :create)) %>
+
+  <span><%= link "Back", to: conferences_path(@conn, :index) %></span>
+
+</div>

@@ -1,0 +1,43 @@
+<h2>Show Conferences</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @conferences.title %>
+  </li>
+
+  <li>
+    <strong>Year:</strong>
+    <%= @conferences.year %>
+  </li>
+
+  <li>
+    <strong>Location:</strong>
+    <%= @conferences.location %>
+  </li>
+
+  <li>
+    <strong>Start date:</strong>
+    <%= @conferences.start_date %>
+  </li>
+
+  <li>
+    <strong>End date:</strong>
+    <%= @conferences.end_date %>
+  </li>
+
+  <li>
+    <strong>Fixed date:</strong>
+    <%= @conferences.fixed_date %>
+  </li>
+
+  <li>
+    <strong>Country:</strong>
+    <%= @conferences.country %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: conferences_path(@conn, :edit, @conferences) %></span>
+<span><%= link "Back", to: conferences_path(@conn, :index) %></span>

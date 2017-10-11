@@ -16,21 +16,13 @@
         <div class="nav-wrapper">
           <%= link "Elixir-posts", to: page_path(@conn, :index), class: "brand-logo" %>
           <ul class="right hide-on-med-and-down">
-            <li class="search">
-              <%= form_for @conn, page_path(@conn, :search), [as: :search, class: "search-form"], fn f -> %>
-                  <%= text_input f, :search_input, required: true, class: "search-input", placeholder: "Search" %>
-                  <input type="image" src="/images/search.png" class="search-image" border="0" alt="Submit" />
-
-              <% end %>
+            <li>
+              <%= link "Posts", to: post_path(@conn, :index) %>
             </li>
-            <%= if Map.has_key?(@conn.assigns, :user) do %>
-              <li>
-                <div class="chip">
-                  <img src="images/phoenix.png" alt="Contact Person">
-                  Jane Doe
-                </div>
-              </li>
-            <% end %>
+            <li>
+              <%= link "conferences", to: conferences_path(@conn, :index) %>
+            </li>
+
           </ul>
       </div>
     </nav>

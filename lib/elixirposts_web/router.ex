@@ -23,6 +23,9 @@ defmodule ElixirpostsWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/conferences", PageController, :conference
+    get "/conferences/:year", PageController, :conference_list
+    get "/conferences/:year/talks", PageController, :talks
 
     post "/search", PageController, :search
     get "/:subtopic", PageController, :list_subtopics
@@ -38,6 +41,7 @@ defmodule ElixirpostsWeb.Router do
       pipe_through :admin
 
       resources "/posts", PostController
+      resources "/conference", ConferencesController
     end
 
   end
