@@ -41,7 +41,9 @@ defmodule ElixirpostsWeb.Router do
       pipe_through :admin
 
       resources "/posts", PostController
-      resources "/conference", ConferencesController
+      resources "/conference", ConferencesController do
+        resources "/talks", TalkController
+      end
     end
 
   end

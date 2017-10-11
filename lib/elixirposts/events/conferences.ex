@@ -1,7 +1,7 @@
 defmodule Elixirposts.Events.Conferences do
   use Ecto.Schema
   import Ecto.Changeset
-  alias Elixirposts.Events.Conferences
+  alias Elixirposts.Events.{Conferences, Talk}
 
 
   schema "conference" do
@@ -12,6 +12,7 @@ defmodule Elixirposts.Events.Conferences do
     field :start_date, :string
     field :title, :string
     field :year, :integer
+    has_many :talks, Talk
 
     timestamps()
   end

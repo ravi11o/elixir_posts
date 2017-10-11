@@ -1,0 +1,33 @@
+<h2>Show Talk</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @talk.title %>
+  </li>
+
+  <li>
+    <strong>Creator:</strong>
+    <%= @talk.creator %>
+  </li>
+
+  <li>
+    <strong>Tags:</strong>
+    <%= @talk.tags %>
+  </li>
+
+  <li>
+    <strong>Url:</strong>
+    <%= @talk.url %>
+  </li>
+
+  <li>
+    <strong>Views:</strong>
+    <%= @talk.views %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: conferences_talk_path(@conn, :edit, @conference, @talk) %></span>
+<span><%= link "Back", to: conferences_talk_path(@conn, :index, @conference) %></span>

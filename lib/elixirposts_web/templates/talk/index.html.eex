@@ -1,0 +1,34 @@
+<span><%= link "Back to Conference", to: conferences_path(@conn, :index), class: "right btn btn-default" %></span>
+
+<span><%= link "New Talk", to: conferences_talk_path(@conn, :new, @conference), class: "btn btn-default" %></span>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Creator</th>
+      <th>Tags</th>
+      <th>Url</th>
+      <th>Views</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for talk <- @talks do %>
+    <tr>
+      <td><%= talk.title %></td>
+      <td><%= talk.creator %></td>
+      <td><%= talk.tags %></td>
+      <td><%= talk.url %></td>
+      <td><%= talk.views %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: conferences_talk_path(@conn, :show, @conference, talk), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: conferences_talk_path(@conn, :edit, @conference, talk), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: conferences_talk_path(@conn, :delete, @conference, talk), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>

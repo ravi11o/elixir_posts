@@ -1,7 +1,7 @@
 defmodule ElixirpostsWeb.PageController do
   use ElixirpostsWeb, :controller
 
-  alias Elixirposts.{Index, Index.Post}
+  alias Elixirposts.{Index, Index.Post, Events}
 
   def index(conn, params) do
     page = Index.list_featured_with_page(params)
@@ -17,10 +17,14 @@ defmodule ElixirpostsWeb.PageController do
 
   def conference(conn, _params) do
     conn
+    |> render("conference.html")
   end
 
-  def conference_list(conn, _params) do
+  def conference_list(conn, %{"year" => year}) do
+    list = Events.get_conferences_by_year(year)
+
     conn
+    |> render("conference_list.html", list: list)
   end
 
   def talks(conn, _params) do

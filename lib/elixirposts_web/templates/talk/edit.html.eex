@@ -1,0 +1,5 @@
+<h2>Edit Talk</h2>
+
+<%= render "form.html", Map.put(assigns, :action, conferences_talk_path(@conn, :update, @conference, @talk)) %>
+
+<span><%= link "Back", to: conferences_talk_path(@conn, :index, @conference) %></span>

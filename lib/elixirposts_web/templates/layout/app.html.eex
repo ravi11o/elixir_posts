@@ -54,7 +54,7 @@
              data-activates='dropdown1'>Deployment</a>
         </div>
         <div>
-          <a class="waves-effect btn" href="#">Conferences</a>
+          <a class="waves-effect btn" href="/conferences">Conferences</a>
         </div>
       </div>
 

@@ -92,3 +92,8 @@
 .alert-indicator {
   padding-top: 64px;
 }
+
+.card .card-title {
+    font-size: 30px;
+    font-weight: 500;
+}
