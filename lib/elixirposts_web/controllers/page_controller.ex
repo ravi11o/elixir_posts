@@ -27,8 +27,12 @@ defmodule ElixirpostsWeb.PageController do
     |> render("conference_list.html", list: list)
   end
 
-  def talks(conn, _params) do
+  def talks(conn, %{"id" => id}) do
+    talks = Events.talks_by_conference_id(id)
+    IO.inspect talks
+
     conn
+    |> render("talks.html", talks: talks)
   end
 
   def search(conn, %{"search" => %{"search_input" => input}}) do

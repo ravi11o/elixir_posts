@@ -127,6 +127,12 @@ defmodule Elixirposts.Events do
     |> Repo.all
   end
 
+  def talks_by_conference_id(id) do
+    Talk
+    |> where([t], t.conference_id == ^id)
+    |> Repo.all
+  end
+
   @doc """
   Gets a single talk.
 

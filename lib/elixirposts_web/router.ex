@@ -24,8 +24,9 @@ defmodule ElixirpostsWeb.Router do
 
     get "/", PageController, :index
     get "/conferences", PageController, :conference
+    get "/conferences/:id/talks", PageController, :talks
     get "/conferences/:year", PageController, :conference_list
-    get "/conferences/:year/talks", PageController, :talks
+
 
     post "/search", PageController, :search
     get "/:subtopic", PageController, :list_subtopics

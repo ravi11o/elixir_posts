@@ -2,23 +2,25 @@
   <div class="row">
     <%= for element <- @list do %>
       <div class="col s12 m6">
-        <div class="card blue-grey darken-1">
-          <div class="card-content white-text center">
-            <span class="card-title"><%= element.title %></span>
-            <h5><%= element.location %>, <%= element.country %></h5>
-            <%= if element.fixed_date do %>
-              <p><%= element.fixed_date %></p>
-            <% else %>
-              <%= if month(element.start_date) == month(element.end_date) do %>
-                <p><%= day(element.start_date)%> - <%= day(element.end_date)%>
-                <%= month(element.end_date)%>, <%= element.year %></p>
+        <a href="/conferences/<%= element.id %>/talks">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text center">
+              <span class="card-title"><%= element.title %></span>
+              <h5><%= element.location %>, <%= element.country %></h5>
+              <%= if element.fixed_date do %>
+                <p><%= element.fixed_date %></p>
               <% else %>
-                <p><%= day(element.start_date)%> <%= month(element.start_date)%> -
-                   <%= day(element.end_date)%> <%= month(element.end_date)%>, <%= element.year %></p>
+                <%= if month(element.start_date) == month(element.end_date) do %>
+                  <p><%= day(element.start_date)%> - <%= day(element.end_date)%>
+                  <%= month(element.end_date)%>, <%= element.year %></p>
+                <% else %>
+                  <p><%= day(element.start_date)%> <%= month(element.start_date)%> -
+                     <%= day(element.end_date)%> <%= month(element.end_date)%>, <%= element.year %></p>
+                <% end %>
               <% end %>
-            <% end %>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
     <% end %>
   </div>
