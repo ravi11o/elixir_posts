@@ -130,6 +130,7 @@ defmodule Elixirposts.Events do
   def talks_by_conference_id(id) do
     Talk
     |> where([t], t.conference_id == ^id)
+    |> preload(:conference)
     |> Repo.all
   end
 

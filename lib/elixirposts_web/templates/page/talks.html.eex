@@ -1,18 +1,22 @@
 <div class="container">
-  <div class="row">
-    <%= for talk <- @talks do %>
-      <div class="col s12 m12">
-        <div class="card blue-grey darken-1">
-          <div class="card-content white-text">
-            <span class="card-title center"><%= talk.title %></span>
-            <h6>Lecture by:- <%= talk.creator %></h6>
-            <iframe width="600" height="320"
-              src=<%= talk.url %> allowfullscreen>
-            </iframe>
+  <%= if @talks != [] do %>
+    <div class="row">
+      <%= for talk <- @talks do %>
+        <div class="col s12 m12">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title center"><%= talk.title %></span>
+              <h6>Lecture by:- <%= talk.creator %></h6>
+              <iframe width="600" height="320"
+                src=<%= talk.url %> allowfullscreen>
+              </iframe>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+  <% else %>
+    <h4 class="center">No Talks Available </h4>
+  <% end %>
 
-  </div>
 </div>

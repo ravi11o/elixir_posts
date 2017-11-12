@@ -41,17 +41,20 @@
           <img src="images/logo.png" class="logo-image" alt="Logo">
         </div>
         <div>
-          <a class="waves-effect btn" href="#">Elixir</a>
-        </div>
-        <div>
-          <a class="waves-effect btn" href="#">phoenix</a>
-        </div>
-        <div>
-          <a class="waves-effect btn" href="#">Postgres</a>
+          <a class="waves-effect btn dropdown-button" href="#"
+            data-activates='dropdown1'>Elixir</a>
         </div>
         <div>
           <a class="waves-effect btn dropdown-button" href="#"
-             data-activates='dropdown1'>Deployment</a>
+            data-activates='dropdown2'>phoenix</a>
+        </div>
+        <div>
+          <a class="waves-effect btn dropdown-button" href="#"
+            data-activates='dropdown3'>Postgres</a>
+        </div>
+        <div>
+          <a class="waves-effect btn dropdown-button" href="#"
+             data-activates='dropdown4'>Deployment</a>
         </div>
         <div>
           <a class="waves-effect btn" href="/conferences">Conferences</a>
@@ -68,6 +71,15 @@
 
       </div>
       <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="/elixir">Elixir</a></li>
+      </ul>
+      <ul id='dropdown2' class='dropdown-content'>
+        <li><a href="/phoenix">Phoenix</a></li>
+      </ul>
+      <ul id='dropdown3' class='dropdown-content'>
+        <li><a href="/postgres">Postgres</a></li>
+      </ul>
+      <ul id='dropdown4' class='dropdown-content'>
         <li><a href="/distillery">Distillery</a></li>
         <li><a href="/docker">Docker</a></li>
         <li><a href="/exrm">Exrm</a></li>
