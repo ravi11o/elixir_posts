@@ -12,7 +12,7 @@ config :elixirposts,
 # Configures the endpoint
 config :elixirposts, ElixirpostsWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "0cCP13TXIH3jfZpCIExPpkZAJXImjMbxV6DiejEwC//8tkrE/EGxz/EDVWiRXMO7",
+  secret_key_base: System.get_env("SECRET_KEY_BASE") || "0cCP13TXIH3jfZpCIExPpkZAJXImjMbxV6DiejEwC//8tkrE/EGxz/EDVWiRXMO7",
   render_errors: [view: ElixirpostsWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Elixirposts.PubSub,
            adapter: Phoenix.PubSub.PG2]
