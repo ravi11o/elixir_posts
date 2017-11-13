@@ -29,6 +29,7 @@ defmodule ElixirpostsWeb.PageController do
 
   def talks(conn, %{"id" => id}) do
     talks = Events.talks_by_conference_id(id)
+    IO.inspect talks
 
     conn
     |> render("talks.html", talks: talks)

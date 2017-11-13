@@ -10,7 +10,7 @@ defmodule Elixirposts.Events.Talk do
     field :title, :string
     field :url, :string
     field :views, :integer, default: 0
-    belongs_to :conferences, Conferences
+    belongs_to :conference, Conferences
 
     timestamps()
   end

@@ -163,7 +163,7 @@ defmodule Elixirposts.Events do
 
   """
   def create_talk(attrs \\ %{}, conference) do
-    %Talk{conferences_id: conference.id}
+    %Talk{conference_id: conference.id}
     |> Talk.changeset(attrs)
     |> Repo.insert()
   end

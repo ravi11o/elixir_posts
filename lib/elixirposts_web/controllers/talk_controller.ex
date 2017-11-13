@@ -4,8 +4,8 @@ defmodule ElixirpostsWeb.TalkController do
   alias Elixirposts.Events
   alias Elixirposts.Events.Talk
 
-  def index(conn, params, conference) do
-    IO.inspect params
+  def index(conn, _params, conference) do
+    IO.inspect conference
     talks = Events.list_talks(conference)
     render(conn, "index.html", talks: talks, conference: conference)
   end
