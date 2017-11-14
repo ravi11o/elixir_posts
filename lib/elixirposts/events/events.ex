@@ -18,7 +18,9 @@ defmodule Elixirposts.Events do
 
   """
   def list_conference do
-    Repo.all(Conferences)
+    Conferences
+    |> order_by(desc: :year)
+    |> Repo.all
   end
 
   @doc """
