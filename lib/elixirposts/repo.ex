@@ -1,6 +1,6 @@
 defmodule Elixirposts.Repo do
   use Ecto.Repo, otp_app: :elixirposts
-  use Scrivener, page_size: 2
+  use Scrivener, page_size: 4
 
   @doc """
   Dynamically loads the repository url from the

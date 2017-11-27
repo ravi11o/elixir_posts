@@ -38,7 +38,7 @@
 
       <div id="sidebar" class="col s3 center">
         <div class="logo">
-          <img src="images/logo.png" class="logo-image" alt="Logo">
+          <img src="/images/logo.png" class="logo-image" alt="Logo">
         </div>
         <div>
           <a class="waves-effect btn dropdown-button" href="#"
