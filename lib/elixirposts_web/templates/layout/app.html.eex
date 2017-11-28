@@ -72,6 +72,7 @@
       </div>
       <ul id='dropdown1' class='dropdown-content'>
         <li><a href="/elixir">Elixir</a></li>
+        <li><a href="/ecto">Ecto</a></li>
       </ul>
       <ul id='dropdown2' class='dropdown-content'>
         <li><a href="/phoenix">Phoenix</a></li>
@@ -83,7 +84,7 @@
       <ul id='dropdown4' class='dropdown-content'>
         <li><a href="/distillery">Distillery</a></li>
         <li><a href="/docker">Docker</a></li>
-        <li><a href="/exrm">Exrm</a></li>
+        <li><a href="/edeliver">Edeliver</a></li>
         <li><a href="/heroku">Heroku</a></li>
       </ul>
     </div>

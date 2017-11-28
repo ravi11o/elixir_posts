@@ -11,7 +11,6 @@ defmodule ElixirpostsWeb.PageController do
 
   def list_subtopics(conn, params) do
     page = Index.get_subtopic_list(params)
-    IO.inspect page.entries
      conn
      |> render("index.html", posts: page.entries, page: page)
   end
