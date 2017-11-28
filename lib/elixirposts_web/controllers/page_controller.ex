@@ -6,13 +6,14 @@ defmodule ElixirpostsWeb.PageController do
   def index(conn, params) do
     page = Index.list_featured_with_page(params)
     conn
-    |> render("index.html", featured: page.entries, page: page)
+    |> render("index.html", posts: page.entries, page: page)
   end
 
   def list_subtopics(conn, params) do
     page = Index.get_subtopic_list(params)
+    IO.inspect page.entries
      conn
-     |> render("index.html", featured: page.entries, page: page)
+     |> render("index.html", posts: page.entries, page: page)
   end
 
   def conference(conn, _params) do
@@ -37,6 +38,6 @@ defmodule ElixirpostsWeb.PageController do
   def search(conn, %{"search" => %{"search_input" => input}}) do
     posts = Post.search(input)
     conn
-    |> render("index.html", featured: posts, page: nil)
+    |> render("index.html", posts: posts, page: nil)
   end
 end

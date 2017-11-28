@@ -50,7 +50,7 @@
         </div>
         <div>
           <a class="waves-effect btn dropdown-button" href="#"
-            data-activates='dropdown3'>Postgres</a>
+            data-activates='dropdown3'>Database</a>
         </div>
         <div>
           <a class="waves-effect btn dropdown-button" href="#"
@@ -78,6 +78,7 @@
       </ul>
       <ul id='dropdown3' class='dropdown-content'>
         <li><a href="/postgres">Postgres</a></li>
+        <li><a href="/mysql">Mysql</a></li>
       </ul>
       <ul id='dropdown4' class='dropdown-content'>
         <li><a href="/distillery">Distillery</a></li>
