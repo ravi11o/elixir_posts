@@ -4,7 +4,10 @@
   <%= for single <- @posts do %>
     <div class="row">
       <div class="col s10 offset-s1">
-        <h3 class="post-title"><%= single.title %></h3>
+        <h3 class="post-title"><%= link to: single.url, target: "_blank" do %>
+            <%= single.title %>
+          <% end %>
+        </h3>
         <h5 class="post-writer">Posted by: <%= String.capitalize single.writer %></h5>
         <div class="post-tags">
           <h5 class="post-tags">Tags:</h5>
